@@ -19,19 +19,19 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 # docker run -d --name srv-nginx -p 8080:80 -v C:\Users\P3E010-D\Documents\nginx\html:/usr/share/nginx/html nginx:alpine
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+# El servidor muestra un código 403 forbidden.
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+# No se encuentra en el directorio, por lo tanto el servidor no puede mostrar dicho archivo de inicio.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+# El servidor muestra el HTML del template descargado, ya no muestra un código 403.
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+# docker rm srv-nginx
 
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+# Los archivos del template descargado persisten en el directorio local, por lo tanto al crear nuevamente el contenedor el servidor conoce el index.html y lo muestra.
 
 
