@@ -16,22 +16,26 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 
 ### Crear un contenedor con la imagen nginx:alpine, mapear todos por puertos, para la ruta carpeta host colocar el directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html (esta ruta se obtiene al revisar la documentación de la imagen)
 ![Volúmenes](volumen-host.PNG)
-# docker run -d --name srv-nginx -p 8080:80 -v C:\Users\P3E010-D\Documents\nginx\html:/usr/share/nginx/html nginx:alpine
+```
+docker run -d --name srv-nginx -p 8080:80 -v C:\Users\P3E010-D\Documents\nginx\html:/usr/share/nginx/html nginx:alpine
+```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# El servidor muestra un código 403 forbidden.
+El servidor muestra un código 403 forbidden.
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# No se encuentra en el directorio, por lo tanto el servidor no puede mostrar dicho archivo de inicio.
+No se encuentra en el directorio, por lo tanto el servidor no puede mostrar dicho archivo de inicio.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# El servidor muestra el HTML del template descargado, ya no muestra un código 403.
+El servidor muestra el HTML del template descargado, ya no muestra un código 403.
 
 ### Eliminar el contenedor
-# docker rm srv-nginx
+```
+docker rm srv-nginx
+```
 
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
-# Los archivos del template descargado persisten en el directorio local, por lo tanto al crear nuevamente el contenedor el servidor conoce el index.html y lo muestra.
+Los archivos del template descargado persisten en el directorio local, por lo tanto al crear nuevamente el contenedor el servidor conoce el index.html y lo muestra.
 
 
