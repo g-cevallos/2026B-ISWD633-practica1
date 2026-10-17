@@ -1,3 +1,6 @@
-# COMPLETAR  
-Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
-Si solucionó un problema presentado o utilizó otros comandos que no se mencionan al realizar la práctica también se debe documentar.
+# Aprendizaje 
+El aprendizaje más importante de la práctica fue comprender cómo los volúmenes en Docker permiten que la información persista y cómo su gestión depende del tipo de volumen utilizado. Por un lado, están los volúmenes nombrados, que son gestionados por Docker y se identifican fácilmente mediante un nombre; los montajes de tipo bind mount, que vinculan una carpeta del equipo con el contenedor y los volúmenes anónimos, que Docker crea sin asignarles un nombre específico. Al comparar sus características, comprendí que los volúmenes nombrados resultan especialmente prácticos, ya que facilitan la conservación y administración de la información de una manera más organizada y controlada.
+# Problema solucionado
+Durante el desarrollo de la práctica, surgió un inconveniente al intentar iniciar el contenedor de PostgreSQL, ya que este se detenía poco después de ejecutarse. El problema estaba relacionado con la ruta de destino utilizada al montar el volumen.
+
+Para solucionarlo, se modificó la ruta de destino del volumen. En lugar de utilizar -v vol-postgres:/var/lib/postgresql/data, se utilizó -v vol-postgres:/var/lib/postgresql, de acuerdo con la estructura de almacenamiento requerida por la versión utilizada. Con este cambio, el contenedor pudo iniciarse correctamente y mantenerse en ejecución.
